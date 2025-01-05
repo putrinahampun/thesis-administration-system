@@ -1,64 +1,53 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Thesis Administration System 
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Overview 
+- **Project Name** : Thesis Administration System 
+- **Description** :
+  The management of thesis activities in USU considered not practical and efficient. This is due to manual management like processing, analysis, and evaluation data, that cause late submission files, delay in determining some important dates, and vulnerable data to lose and damage. Therefore developing a thesis administration system is important to build an automatic system less erros and effective. 
+- **Purpose**
+    - Simplify the administration process for all parties.
+    - Minimize damage and lose files during the process.
+    - Improve the quality of campus academic services. 
+- **Technologies Used**
+    - Hardware : CPU, Disk, Memory.
+    - Software: Visual Studi Code, XAMPP, Web Browser.
+    - Others: HTML, CSS, JavaScript, Bootstrap, PHP, Laravel, Composer. 
+## Features 
+- **User and Schedule Management** : This features help Admin to do CRUD (create, read, update and delete) users and schedules. 
+- **Print and Download File** : This features help all users to download and print file from system. 
+- **Input Grades** : This features help Admin to input grades that students gained through their thesis. 
+- **Searching** : This feature help all users to find data / file easily. 
+## Database Schema 
+- **Table and Fields**
+    - Database Name : administrasi_skripsi
+    - Total Tables : 15 main tables & 7 logs tables
+    - Total Virtual Tables : 16 view tables
+      
 
-## About Laravel
+      | Table name | Atributes | Purpose |
+      | ---------- | --------- | ------- |
+      | users | id, username, email, status, password | saving user's data for login |
+      | admins | id, nama, id_user |saving admin's data that connected with users table. Admin can access all features in the system|
+      | dosens | nip, nama, NIDN, jenis_kelamin, id_user | saving lecture's data that connected with users table. Lecture can access the list of students doing thesis with their schedules.|
+      | dosen_pembimbings | nim, nip_dosbing1, nip_dosbing2 | saving all supervisors that connected with mahasiswas table |
+      | dosen_pengujis | nim, nip_penguji1, nip_penguji2 | saving all examining lecturer that connected with mahasiswas table |
+      | jadwal_semhas | nim, tanggal_semhas, waktu, tempat | saving all student's schedules for seminar hasil event |
+      | jadwal_sempros | nim, tanggal_sempro, waktu, tempat | saving all student's schedules for seminar proposal event |
+      | jadwal_sidangs | nim, tanggal_sempro, waktu, tempat | saving all student's schedules for sidang meja hijau event |
+      | keterangan_status_akses | no_statusAkses, keterangan | saving status' information (admin, dosen, kaprodi, mahasiswa) |
+      | mahasiswas | nim, nama, angkatan, jenis_kelamin, foto, status, id_user | saving student' data. Students can access their own schedules, and using the print and download features |
+      | nilai_i_p_k_s | nim, IPK | saving student's final grade |
+      | nilai_seminar_hasil | nim, nip, (assesment components) | saving student's grades for semhas event |
+      | nilai_sidang_meja_hijaus | nim, nip, (assesment components) | saving student's grades for sidang event |
+      | nilai_uji_programs | nim, nip, (assesment components) | saving student's grades for uji program event |
+      | skripsis | id, nim, judul_skripsi, bidang_ilmu | saving thesis' identity |
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- **Queries**
+    - CRUD (Create, Read, Update, Delete)
+    - Trigger & View
+    - Function & Procedure
+- **Entity Relationship Diagram (ERD)**
+  ![image](https://github.com/user-attachments/assets/330bc193-bb76-4bee-ac13-c9f3b75527c7)
+## Installation Guide 
+## Challenges and Solutions 
+## Future Improvement
