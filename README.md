@@ -1,29 +1,29 @@
 # 📓 Thesis Administration System 📓 
 
-## Project Description 
-🖼️ **Background :** 
+## 🖼️ Project Description 
+**Background :** 
 
 The management of thesis activities in USU considered not practical and efficient. This is due to manual management like processing, analysis, and evaluation data, that cause late submission files, delay in determining some important dates, and vulnerable data to lose and damage. Therefore developing a thesis administration system is important to build an automatic system less erros and effective. 
 
-🎯 **Target :** 
+**Target :** 
 
 - Simplify the administration process for all parties.
 - Minimize damage and lose files during the process.
 - Improve the quality of campus academic services. 
 
-🧰 **Technologies Used :**
+**Technologies Used :**
 
 - Hardware : CPU, Disk, Memory.
 - Software: Visual Studi Code, XAMPP, Web Browser.
 - Others: HTML, CSS, JavaScript, Bootstrap, PHP, Laravel, Composer.
   
-🗞️ **Features :**
+**Features :**
 - **User and Schedule Management** : This features help Admin to do CRUD (create, read, update and delete) users and schedules. 
 - **Print and Download File** : This features help all users to download and print file from system. 
 - **Input Grades** : This features help Admin to input grades that students gained through their thesis. 
 - **Searching** : This feature help all users to find data / file easily.
  
-## Database Schema 
+## 🏗️ Database Schema 
 ### 1. Table and Fields
 - Database Name : administrasi_skripsi
 - Total Tables : 15 main tables & 7 logs tables
@@ -54,4 +54,19 @@ The management of thesis activities in USU considered not practical and efficien
 
 ### 3. Entity Relationship Diagram (ERD)
 ![image](https://github.com/user-attachments/assets/330bc193-bb76-4bee-ac13-c9f3b75527c7) 
+
+## 💻 Deployment 
+**Cloning Project**
+- Open the project on github, find the HTTPS or SSH button. Choose and press one of them, then copy the link provided.
+- In your local computer, create or choose the folder you want to save the project. Open the gitbash, type this command ```git clone [paste the link]``` and paste the copied-link after that. If you can't find the gitbash, then you should download and install git or your computer.
+  
+**Running Project**
+- Open the project on your IDE. Copy file .env by using ```cp.env.example .env``` (change the copied-file from .env.example to .env). Make sure the name of databases already exists in your database system.
+- Open the terminal section and type this command ```composer install```for installing the Composer.
+- Type this command ```php artisan key:generate``` after you there's no doubt in step one and two.
+- After that, type this command ```php artisan migrate``` to migrate the all the table's structures to your database.
+- This project provides a database seeder to give you a data example, so type this command too ```php artisan db:seed```.
+- Finally type this command to run the project ```php artisan serve```.
+- Well done!
+
 
